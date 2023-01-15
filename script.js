@@ -10,14 +10,14 @@ function convertToRoman(num) {
     };
 
   //your code here
-  var str = '';
-	for(var i of Object.keys(obj)){
-		var q = Math.floor(num / obj[i]);
-		num -= q * obj[i];
-	    str += i.repeat(q);
-	}
-
-	return str;
+  let result = '';
+  
+  for (key in obj) {
+    result += key.repeat(Math.floor(num / obj[key]));
+    num %= obj[key];
+  }
+  
+  return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
