@@ -10,18 +10,13 @@ function convertToRoman(num) {
     };
 
   //your code here
-  function convertToRoman(num) {
-  if (num === 0) {
-    return '';
-  }
-  for (var i = 0; i < romanMatrix.length; i++) {
-    if (num >= romanMatrix[i][0]) {
-      return romanMatrix[i][1] + convertToRoman(num - romanMatrix[i][0]);
-    }
-  }
-}
+  var str = '';
+	for(var i of Object.keys(obj)){
+		var q = Math.floor(num / obj[i]);
+		num -= q * obj[i];
+	    str += i.repeat(q);
+	}
 
-}
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
