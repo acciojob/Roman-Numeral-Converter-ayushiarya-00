@@ -12,11 +12,14 @@ function convertToRoman(num) {
   //your code here
   let result = '';
   
-  for (key in obj) {
-    result += key.repeat(Math.floor(num / obj[key]));
-    num %= obj[key];
-  }
-  
+  let remainder = num;
+
+    for (let i = 0; i < obj.length; i++) {
+        while (remainder >= obj[i][1]) {
+            result += obj[i][0];
+            remainder -= obj[i][1];
+        }
+    }
   return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
