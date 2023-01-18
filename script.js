@@ -10,18 +10,17 @@ function convertToRoman(num) {
     };
 
   //your code here
-  let result = '';
-  
-  let remainder = num;
-
-    for (let i = 0; i < obj.length; i++) {
-        while (remainder >= obj[i][1]) {
-            result += obj[i][0];
-            remainder -= obj[i][1];
+let result = "";
+      for (let i in obj) {
+        while (num >= obj[i]) {
+          result += i;
+          num -= obj[i];
         }
-    }
-  return result;
-}
+      }
+      return result;
+
+}  
+
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
 // console.log(convertToRoman(36));
